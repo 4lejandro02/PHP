@@ -11,6 +11,10 @@
 <?PHP
  $Num = rand(1,10);
  $Total = 0;
+ $par = 0;
+ $impar = 0;
+ $min = 7;
+ $max = 0;
 
  if($Num === 1)
  	{
@@ -23,13 +27,26 @@
  	{
  		$dado = rand(1,6);
  		echo "<img src=\"img/$dado.jpg\" width=\"120\" height=\"120\">\n";
-
- 		$Total += $dado;
-
+ 	if($dado % 2){
+ 		$impar++;
+ 	} else {
+ 		$par++;
  	}
+ 	if ($dado > $max){
+ 		$max = $dado;
+ 	}
+ 	if ($dado < $min){
+ 		$min = $dado;
+ 	}
+		$Total += $dado;
+ 	}
+
  	echo "<br>";
  	echo "El total de puntos son:".$Total;
-
+ 	echo "<br>";
+ 	echo "Hay $impar dados impares y $par dados pares";
+ 	echo "<br>";
+ 	echo "El maximo máximo tiene $max puntos y el minimo tiene $min puntos";
 ?>
 
 </body>
