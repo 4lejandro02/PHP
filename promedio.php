@@ -1,7 +1,7 @@
 <?php
 //Calcular el promedio del peso de 5 personas x medio del array
 
-$promedio=0;
+
 /*$Pesos[0]=62.5;
 $Pesos[1]=95.5;
 $Pesos[2]=70.2;
@@ -28,7 +28,7 @@ for($i=0;$i<count($Pesos);$i++){
 	}	
 }
 */
-
+$promedio=0;
 $grupoA[0] = 10;
 $grupoA[1] = 7;
 $grupoA[2] = 8;
@@ -40,6 +40,7 @@ $grupoA[7] = 8;
 $grupoA[8] = 5;
 $grupoA[9] = 10;
 
+$promedioa=0;
 $grupoB[0] = 4;
 $grupoB[1] = 8;
 $grupoB[2] = 2;
@@ -56,20 +57,33 @@ $grupoB = [4,8,2,6,9,1,7,3,6,8];
 */
 for($i=0;$i<count($grupoA);$i++)
 	{
-		$promedioa = $promedio + $grupoA[$i];
+		$promedio = $promedio + $grupoA[$i];
 	}
-$proA = $promedioa/10;
+$proA = $promedio/10;
 
 for($i=0;$i<count($grupoB);$i++)
 	{
-		$promediob = $promedio + $grupoB[$i];
+		$promedioa = $promedioa + $grupoB[$i];
 	}
-$proB = $promediob/10;
+$proB = $promedioa/10;
+
+$proTotal = ($proA+$proB)/2;
+
 
 echo "El promedio registrado en el grupo A es: ".$proA;
 echo "<br>";
 echo "El promedio registrado en el grupo B es: ".$proB;
 echo "<br>";
+echo "El promedio de los dos grupos es de: ".$proTotal;
+echo "<br>";
+if($proA > $proB)
+	{
+		echo "El grupo con mejor promedio es: ".$proA;
+	}
+	else
+	{
+		echo "El grupo con mejor promedio es: ".$proB;
+	}
 
 //echo "Por encima  del promedio: ".$alto;
 echo "<br>";
